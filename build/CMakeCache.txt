@@ -18,7 +18,7 @@
 APPLICATION_BINARY_DIR:PATH=/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/build
 
 //Application Source Directory
-APPLICATION_SOURCE_DIR:PATH=/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/neuberfran
+APPLICATION_SOURCE_DIR:PATH=/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/app
 
 //Selected board
 BOARD:STRING=pico_pi_m4
@@ -39,7 +39,7 @@ CACHED_BOARD:STRING=pico_pi_m4
 // listed, e.g. CONF_FILE="prj1.conf;prj2.conf" The CACHED_CONF_FILE
 // is internal Zephyr variable used between CMake runs. To change
 // CONF_FILE, use the CONF_FILE variable.
-CACHED_CONF_FILE:STRING=/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/neuberfran/prj.conf
+CACHED_CONF_FILE:STRING=/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/app/prj.conf
 
 //Selected shield
 CACHED_SHIELD:STRING=
@@ -114,7 +114,7 @@ Zephyr_DIR:PATH=/home/neuberfran/zephyr_imx7d/zephyr/share/zephyr-package/cmake
 ########################
 
 //The application configuration folder
-APPLICATION_CONFIG_DIR:INTERNAL=/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/neuberfran
+APPLICATION_CONFIG_DIR:INTERNAL=/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/app
 //DT bindings root directories
 CACHED_DTS_ROOT_BINDINGS:INTERNAL=/home/neuberfran/zephyr_imx7d/zephyr/dts/bindings
 //This is the directory where this CMakeCache.txt was created
@@ -145,7 +145,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/neuberfran
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/app
 //number of local generators
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //Path to CMake installation.

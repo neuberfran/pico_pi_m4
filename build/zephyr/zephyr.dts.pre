@@ -4654,6 +4654,17 @@
 # 10 "/home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/pico_pi_m4-pinctrl.dtsi" 2
 
 &pinctrl {
+
+ gpio-leds {
+ status = "okay";
+
+    led0 {
+     label = "my_led";
+     gpios = <&gpio2 1 (1 << 0)>;
+     default-state = "off";
+    };
+    };
+
  uart2_default: uart2_default {
   group0 {
    pinmux = <&mx7d_pad_uart2_rx_data__uart2_dce_rx>,
