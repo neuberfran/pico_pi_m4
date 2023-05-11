@@ -9,17 +9,19 @@
 #include <nxp/nxp_imx/mimx7d-pinctrl.dtsi>
 
 &pinctrl {
-	
-	gpio-leds {
-	status = "okay";
 
-	   led0 {
-		   label = "my_led";
-		   gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
-		   default-state = "off";
-	   };
+	my_led: my_led {
+       label = "my_led";
+       gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
+       default-state = "off";
     };
-	
+
+	led0: led0 {
+       label = "LED0";
+       gpios = <&gpio2 0 GPIO_ACTIVE_LOW>;
+       default-state = "off";
+    };
+	  
 	uart2_default: uart2_default {
 		group0 {
 			pinmux = <&mx7d_pad_uart2_rx_data__uart2_dce_rx>,

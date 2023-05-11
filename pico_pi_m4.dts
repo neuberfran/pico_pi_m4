@@ -15,10 +15,10 @@
 	compatible = "nxp,mcimx7d_m4";
 
 	aliases {
-		uart-6 = &uart6;
-		my_led = &gpio2;
-	};
-
+	  uart6 = &uart6;
+	  my-led = &gpio2;
+    };
+	
 	chosen {
 		zephyr,flash = &tcml_code;
 		zephyr,sram = &tcmu_sys;
@@ -35,7 +35,7 @@
 		led0 {
 			label = "my_led";
 			gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
-			default-state = "off";
+			default-on;
 		};
 	};
 };
