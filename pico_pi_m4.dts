@@ -17,6 +17,7 @@
 	aliases {
 	  uart6 = &uart6;
 	  my-led = &gpio2;
+  //    led0 = &led0;
     };
 	
 	chosen {
@@ -24,9 +25,18 @@
 		zephyr,sram = &tcmu_sys;
 		zephyr,console = &uart6;
 		zephyr,shell-uart = &uart6;
-		zephyr,led-gpios = <&my_led 0 GPIO_ACTIVE_LOW>;
+		zephyr,led-gpios = <&led0 0 GPIO_ACTIVE_LOW>;
 	};
 };
+
+
+// leds {
+	//	compatible = "gpio-leds";
+	//	led0: led_0 {
+	//		gpios = <&gpio0 28 GPIO_ACTIVE_LOW>;
+	//		label = "Green LED 0";
+	//	};
+//};
 
 &gpio2 {
 	gpio-leds {
