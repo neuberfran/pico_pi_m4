@@ -15,9 +15,8 @@
 	compatible = "nxp,mcimx7d_m4";
 
 	aliases {
-	  uart6 = &uart6;
-	  my-led = &gpio2;
-  //    led0 = &led0;
+   //     led0 = &led_0;
+	    uart6 = &uart6;
     };
 	
 	chosen {
@@ -25,30 +24,30 @@
 		zephyr,sram = &tcmu_sys;
 		zephyr,console = &uart6;
 		zephyr,shell-uart = &uart6;
-		zephyr,led-gpios = <&led0 0 GPIO_ACTIVE_LOW>;
+//		zephyr,led-gpios = <&led0 0 GPIO_ACTIVE_LOW>;
 	};
-};
 
-
-// leds {
-	//	compatible = "gpio-leds";
-	//	led0: led_0 {
-	//		gpios = <&gpio0 28 GPIO_ACTIVE_LOW>;
-	//		label = "Green LED 0";
-	//	};
-//};
-
-&gpio2 {
-	gpio-leds {
+	leds {
 		compatible = "gpio-leds";
-
-		led0 {
-			label = "my_led";
-			gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
-			default-on;
+		led0: led_0 {
+			gpios = <&gpio2 6 GPIO_ACTIVE_LOW>;
+			label = "Green LED 0";
 		};
-	};
+    };
+
 };
+
+// &gpio2 {
+	//gpio-leds {
+	//	compatible = "gpio-leds";
+
+	//	led0 {
+	//		label = "my_led";
+	//		gpios = <&gpio1 1 GPIO_ACTIVE_LOW>;
+	//		default-on;
+	//	};
+//	};
+//};
 
 &uart2 {
 	pinctrl-0 = <&uart2_default>;
@@ -62,7 +61,7 @@
 
 &uart6 {
 	status = "okay";
-	current-speed = <115200>;
+	current-speed = <123>;
 	modem-mode = <0>;
 	pinctrl-0 = <&uart6_default>;
 	pinctrl-names = "default";

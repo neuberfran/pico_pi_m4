@@ -1,7 +1,7 @@
 #include <zephyr/kernel.h>
 // #include <zephyr.h>
 //#include <zephyr/remoteproc.h>
-#include <drivers/remoteproc.h>
+#include <remoteproc.h>
 #include <device.h>
 #include <drivers/gpio.h>
 
