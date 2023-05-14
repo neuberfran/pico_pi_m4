@@ -35,18 +35,18 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Determining if files stdatomic.h exist passed with the following output:
 Change Dir: /home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/home/neuberfran/.local/bin/ninja cmTC_bf876 && [1/2] Building C object CMakeFiles/cmTC_bf876.dir/HAVE_STDATOMIC_H.c.obj
-[2/2] Linking C executable cmTC_bf876
-arm-zephyr-eabi-gcc: warning: CMakeFiles/cmTC_bf876.dir/HAVE_STDATOMIC_H.c.obj: linker input file unused because linking not done
+Run Build Command(s):/home/neuberfran/.local/bin/ninja cmTC_7591b && [1/2] Building C object CMakeFiles/cmTC_7591b.dir/HAVE_STDATOMIC_H.c.obj
+[2/2] Linking C executable cmTC_7591b
+arm-zephyr-eabi-gcc: warning: CMakeFiles/cmTC_7591b.dir/HAVE_STDATOMIC_H.c.obj: linker input file unused because linking not done
 
 
 
 Determining if files fcntl.h exist passed with the following output:
 Change Dir: /home/neuberfran/zephyr_imx7d/zephyr/boards/arm/pico_pi_m4/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/home/neuberfran/.local/bin/ninja cmTC_2b3fc && [1/2] Building C object CMakeFiles/cmTC_2b3fc.dir/HAVE_FCNTL_H.c.obj
-[2/2] Linking C executable cmTC_2b3fc
-arm-zephyr-eabi-gcc: warning: CMakeFiles/cmTC_2b3fc.dir/HAVE_FCNTL_H.c.obj: linker input file unused because linking not done
+Run Build Command(s):/home/neuberfran/.local/bin/ninja cmTC_7f685 && [1/2] Building C object CMakeFiles/cmTC_7f685.dir/HAVE_FCNTL_H.c.obj
+[2/2] Linking C executable cmTC_7f685
+arm-zephyr-eabi-gcc: warning: CMakeFiles/cmTC_7f685.dir/HAVE_FCNTL_H.c.obj: linker input file unused because linking not done
 
 
 
