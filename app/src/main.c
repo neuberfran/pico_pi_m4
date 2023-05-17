@@ -1,66 +1,81 @@
 #include <zephyr/kernel.h>
-#include <zephyr/device.h>
-#include <zephyr/drivers/gpio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-/* Forward declaration of functions */
+
+/* Resource table structure */
+struct resource_table {
+    uint32_t ver;
+    uint32_t num;
+    uint32_t reserved[2];
+    uint32_t offset[0];
+};
+
+/* Resource entry header structure */
+struct fw_rsc_hdr {
+    uint32_t type;
+    uint8_t data[0];
+};
+
+/* Resource entry types */
+enum fw_resource_type {
+    RSC_CARVEOUT = 0,
+    RSC_DEVMEM = 1,
+    RSC_TRACE = 2,
+    RSC_VDEV = 3,
+    RSC_LAST = 4,
+};
+
+struct remote_proc {
+    /* Add your struct members here */
+    void* ops;
+    struct resource_table* resources;  // Resource table pointer
+};
+
 int my_rproc_start(struct remote_proc *rproc);
 int my_rproc_stop(struct remote_proc *rproc);
 void my_rproc_kick(struct remote_proc *rproc, int vqid);
 
-/* Remote processor handle */
-static struct remote_proc {
-    const struct remote_proc_ops *ops;
-} remote_proc;
-
-/* Remote processor operations */
-static const struct remote_proc_ops my_rproc_ops = {
-    .start = my_rproc_start,
-    .stop = my_rproc_stop,
-    .kick = my_rproc_kick,
-};
-
-/* Implementation of the start function */
 int my_rproc_start(struct remote_proc *rproc)
 {
-    /* Power on and boot the remote processor */
-    /* Replace with your actual implementation */
-    /* Return 0 on success, a negative value on failure */
-    printk("Starting remote processor...\n");
-    // Your implementation here
-
+    /* Function implementation */
     return 0;
 }
 
-/* Implementation of the stop function */
 int my_rproc_stop(struct remote_proc *rproc)
 {
-    /* Power off the remote processor */
-    /* Replace with your actual implementation */
-    /* Return 0 on success, a negative value on failure */
-    printk("Stopping remote processor...\n");
-    // Your implementation here
-
+    /* Function implementation */
     return 0;
 }
 
-/* Implementation of the kick function */
 void my_rproc_kick(struct remote_proc *rproc, int vqid)
 {
-    /* Kick the specified virtqueue */
-    /* Replace with your actual implementation */
-    printk("Kicking virtqueue %d...\n", vqid);
-    // Your implementation here
+    /* Function implementation */
 }
 
-void main(void)
+int main(void)
 {
-    /* Assign operations to the remote processor handle */
-    remote_proc.ops = &my_rproc_ops;
+    struct remote_proc remote_proc;
+    remote_proc.ops = NULL;
+    
+    // Resource table initialization
+    struct resource_table resource_table = {
+        .ver = 1,
+        .num = 1,  // Set the number of resource entries according to your requirements
+        .reserved = {0, 0},
+        .offset = {0},
+    };
+    
+    // Resource entry initialization
+    struct fw_rsc_hdr* resource_entry = (struct fw_rsc_hdr*)&resource_table.offset[0];
+    resource_entry->type = RSC_CARVEOUT; // Set the appropriate resource type
+    // Initialize the resource entry data as per your requirements
+    
+    remote_proc.resources = &resource_table;
 
-    /* Start the remote processor */
-    int ret = remote_proc.ops->start((struct remote_proc *)&remote_proc);
-    if (ret < 0) {
-        printk("Failed to start remote processor\n");
-        return;
-    }
+    my_rproc_start(&remote_proc);
+    my_rproc_stop(&remote_proc);
+    my_rproc_kick(&remote_proc, 0);
+
+    return 0;
 }
