@@ -1,0 +1,24 @@
+//gpio-leds {
+//		compatible = "gpio-leds";
+//
+//		led {
+//			label = "gpio-led";
+//			gpios = <&PICO_EXT_GPIO_P25 GPIO_ACTIVE_HIGH>; /* PICO_P25 */
+//		};
+//	};
+
+
+
+/ {
+	aliases {
+		led0 = &led0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		led0: led_0 {
+			gpios = <&PICO_EXT_GPIO_P25 GPIO_ACTIVE_HIGH>; /* PICO_P25 */
+			label = "LED 0";
+		};
+	};
+};
