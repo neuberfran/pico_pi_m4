@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define LED_PIN 6
 
 /* Resource table structure */
 struct resource_table {
@@ -40,12 +41,20 @@ void my_rproc_kick(struct remote_proc *rproc, int vqid);
 int my_rproc_start(struct remote_proc *rproc)
 {
     // Implementation for starting the remote processor
+   // printk("\r\nHello World!\n\n\r");
+   	printk("Pin config failed: %d");
+   	printk("Bluetooth initialized\n");
+
+
     return 0;
 }
 
 int my_rproc_stop(struct remote_proc *rproc)
 {
     // Implementation for stopping the remote processor
+    printk("Pin config failed: %d");
+   	printk("Bluetooth initialized\n");
+
     return 0;
 }
 
@@ -56,6 +65,12 @@ void my_rproc_kick(struct remote_proc *rproc, int vqid)
 
 int main(void)
 {
+
+   // printk("\r\nHello World!\n\n\r");
+    
+    printk("Pin config failed: %d");
+   	printk("Bluetooth initialized\n");
+
     struct remote_proc remote_proc;
     remote_proc.ops = NULL;
     
@@ -79,24 +94,27 @@ int main(void)
     my_rproc_kick(&remote_proc, 0);
 
     const struct device *dev;
-    dev = device_get_binding("GPIO_0");
+    dev = device_get_binding("GPIO_1");
     if (dev == NULL) {
-        printf("Could not get GPIO_0 device\n");
+        printf("Could not get GPIO_1 device\n");
         return -1;
     }
 
     const struct gpio_dt_spec led_spec = GPIO_DT_SPEC_GET_OR(led0, gpios, {0});
-    if (gpio_pin_configure(dev, led_spec.pin, GPIO_OUTPUT_ACTIVE)) {
+    if (gpio_pin_configure(dev, 6, GPIO_OUTPUT_ACTIVE)) {
         printf("Failed to configure LED pin\n");
         return -1;
     }
 
     while (1) {
-        gpio_pin_set(dev, led_spec.pin, 1);
-        k_msleep(1000);
-        gpio_pin_set(dev, led_spec.pin, 0);
-        k_msleep(1000);
+        printk("Pin config failed: %d");
+       	printk("Bluetooth initialized\n");
+        gpio_pin_toggle(dev, LED_PIN);
+        k_msleep(500);
     }
+
+    printk("Pin config failed: %d");
+   	printk("Bluetooth initialized\n");
 
     return 0;
 }

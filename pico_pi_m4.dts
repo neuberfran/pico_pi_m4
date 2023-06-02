@@ -15,7 +15,7 @@
 	compatible = "nxp,mcimx7d_m4";
 
 	aliases {
-   //     led0 = &led_0;
+        led0 = &led0;
 	    uart6 = &uart6;
     };
 	
@@ -31,23 +31,19 @@
 		compatible = "gpio-leds";
 		led0: led_0 {
 			gpios = <&gpio2 6 GPIO_ACTIVE_LOW>;
-			label = "Green LED 0";
+			label = "User LED";
 		};
-    };
+	};
 
 };
 
-// &gpio2 {
-	//gpio-leds {
-	//	compatible = "gpio-leds";
+&gpio2 {
+	status = "okay";
+};
 
-	//	led0 {
-	//		label = "my_led";
-	//		gpios = <&gpio1 1 GPIO_ACTIVE_LOW>;
-	//		default-on;
-	//	};
-//	};
-//};
+&mub0 {
+	status = "okay";
+};
 
 &uart2 {
 	pinctrl-0 = <&uart2_default>;

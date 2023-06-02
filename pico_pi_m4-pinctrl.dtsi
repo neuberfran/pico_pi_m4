@@ -4,23 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-
 #include <nxp/nxp_imx7d_m4.dtsi>
 #include <nxp/nxp_imx/mimx7d-pinctrl.dtsi>
 
 &pinctrl {
-
-//	my_led: my_led {
-  //     label = "my_led";
-    //   gpios = <&gpio1 1 GPIO_ACTIVE_LOW>;
-      // default-state = "off";
-   // };
-
-//	led0: led_0 {
-  //   	label = "Green LED 0";
-    //    gpios = <&gpio2 6 GPIO_ACTIVE_LOW>;
-      //  default-state = "off";
-   // };
 	  
 	uart2_default: uart2_default {
 		group0 {
