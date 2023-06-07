@@ -1,4 +1,4 @@
-/*
+  /*
  * Copyright (c) 2020, STMICROELECTRONICS
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -9,18 +9,7 @@
 		/*
 		 * shared memory reserved for the inter-processor communication
 		 */
-       	zephyr,ipc_shm = &tcml_code;
-		zephyr,ipc = &mub0;
-	};
-
-	reserved-memory {
-		#address-cells = <1>;
-		#size-cells = <1>;
-		ranges;
-
-		tcml_code: memory@1fff8000 {
-			/* SRAM allocated to shared memory */
-			reg = <0x1fff8000 DT_SIZE_K(32)>;
-		};
+       	zephyr,ipc_shm = &ocram_code;
+		zephyr,ipc = &mu0b;
 	};
 };

@@ -41,7 +41,15 @@
 	status = "okay";
 };
 
-&mub0 {
+&mu0b {
+	status = "okay";
+};
+
+&ocram_code {
+	status = "okay";
+};
+
+&tcml_code {
 	status = "okay";
 };
 

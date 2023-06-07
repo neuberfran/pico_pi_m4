@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <zephyr/ipc/rpmsg_service.h>
 
 #include <zephyr/drivers/ipm.h>
 // /home/neuberfran/zephyr_imx7d/zephyr/include/zephyr/drivers
@@ -57,7 +58,7 @@ struct metal_device shm_device = {
 	.num_regions = 2,
 	.regions = {
 		{.virt = NULL}, /* shared memory */
-		{.virt = NULL}, /* rsc_table memory */
+//		{.virt = NULL}, /* rsc_table memory */
 	},
 	.node = { NULL },
 	.irq_num = 0,
